@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mi-pod
+spec:
+  containers:
+  - name: mi-contenedor
+    image: nginx
+    env:
+    - name: USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: mi-secreto
+          key: username
+    - name: PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: mi-secreto
+          key: password
