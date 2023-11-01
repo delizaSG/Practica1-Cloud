@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mi-configmap
+data:
+  username: mi_usuario
+  password: mi_contraseña
