@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: web-container
+      image: tu-usuario/web-image-userX:latest
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 80
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 80
+    - name: slow-app-container
+      image: tu-usuario/slow-app-image-userX:latest
